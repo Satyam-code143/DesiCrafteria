@@ -6,21 +6,26 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import pic1 from '../images/jazmin-quaynor-bYOi200uQ6w-unsplash.jpg';
 import pic2 from '../images/karly-santiago-E7zsz8JA8FM-unsplash.jpg';
 import pic3 from '../images/neslihan-gunaydin-Ts0830UlVOM-unsplash.jpg';
+import Category from "./Category";
+import Footer from "./Footer";
 
-const IconButton1 = styled(Button)`
-  padding: 1rem;
+const IconButton = styled(Button)`
+  border-radius:100%;
+  marigin-left:5px;
+  margin-right:5px;
 `;
 
 const CarouselDiv=styled.div`
     width:100%;
-    height:600px;
+    height:400px;
 `;
 
 const CarouselImg=styled.img`
     width:100%;
-    height:600px;
+    height:400px;
     background-size:cover;
     background-repeat:no-repeat;
+    
 `;
 
 class Home extends Component {
@@ -33,18 +38,18 @@ class Home extends Component {
       <Fragment>
         <Navbar>
           <Navbar.Group>
-            <Navbar.Heading style={{ fontFamily: "Dancing Script" }}>
+            <Navbar.Heading style={{ fontFamily: "Dancing Script",color:"#000",fontSize:24,fontWeight:"bold" }}>
               Desi Crafteria
             </Navbar.Heading>
           </Navbar.Group>
           <Navbar.Group align={Alignment.RIGHT}>
-            <IconButton1 className="bp3-minimal" icon="search" />
+            <IconButton className="bp3-minimal" icon="search" />
 
-            <IconButton1 className="bp3-minimal" icon="heart" />
-            <IconButton1 className="bp3-minimal" icon="shopping-cart" />
+            <IconButton className="bp3-minimal" icon="heart" />
+            <IconButton className="bp3-minimal" icon="shopping-cart" />
           </Navbar.Group>
         </Navbar>
-        <Carousel autoPlay={true} showStatus={false} showThumbs={false}>
+        <Carousel autoPlay={true} infiniteLoop showStatus={false} showThumbs={false}>
                 <CarouselDiv>
                     <CarouselImg src={pic1}/>
                 </CarouselDiv>
@@ -55,7 +60,8 @@ class Home extends Component {
                     <CarouselImg src={pic3} />
                 </CarouselDiv>
             </Carousel>
-
+        <Category/>
+        <Footer/>
       </Fragment>
     );
   }
